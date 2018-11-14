@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<a th:href='@{/sample1}'>LINK1</a>
+	<a th:href='@{~/sample1}'>LINK1</a>
+	<a href=''>LINK1</a>
+	
+	
+
+	<h2>[[${#arrays.length(arr)}]]</h2>
+
+	
+
+	<h1 th:text="${list}"></h1>
+	<ul th:each="member, iterState : ${list}" th:with="target='u02'">
+	  <li>
+	  	<span th:text="${iterState.index + 10}"></span>
+	  	<span th:text="${iterState.count}"></span>
+	  	<span th:text="${member.mid == target?'SECRET': member.mid}"></span>
+	  	<span th:text="${member.mname}"></span>
+	  	<span>[[${member.mname}]]</span>
+	  	<span th:text="${#dates.format(member.regdate,'yyyy-MM-dd')}"></span>
+	  </li>
+	</ul>
+	
+	<script th:inline="javascript">
+		
+		var result = [[${result}]];
+		
+		if(result === "SUCCESS"){
+			alert("AAA");
+		}
+	
+	</script>
+</body>
+</html>
