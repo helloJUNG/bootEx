@@ -15,7 +15,15 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     
   thymeleaf:
-    cache: false    
-    
+    cache: false
+  
+  
 
+logging:
+   level:
+     org.hibernate: info
+     org.spingframework: info
+     org.zerock: debug
+     
+     
     
